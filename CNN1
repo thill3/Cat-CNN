@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 71,
+   "execution_count": null,
    "id": "40359fcd-bd7e-4306-9bea-67813b47df46",
    "metadata": {},
    "outputs": [],
@@ -15,18 +15,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 73,
+   "execution_count": null,
    "id": "f29434af-bbca-429c-8c33-91b4fc950209",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "['Steve', 'Samwise', 'Aesop', 'Fievel', 'Mycroft', 'Chase']\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "dims = []\n",
     "print(os.listdir(solo_pics_path))"
@@ -34,7 +26,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 74,
+   "execution_count": null,
    "id": "7fcfe1e7-fd39-45eb-b142-9ef913646d2c",
    "metadata": {},
    "outputs": [],
@@ -49,18 +41,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 75,
+   "execution_count": null,
    "id": "4c47672f-b9f4-46df-8a47-0899b188ff90",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Counter({('Chase', 3000, 4000): 73, ('Mycroft', 3488, 4640): 68, ('Samwise', 1836, 3264): 65, ('Steve', 3000, 4000): 51, ('Aesop', 3000, 4000): 49, ('Steve', 4000, 3000): 46, ('Mycroft', 4640, 3488): 44, ('Chase', 4000, 3000): 31, ('Aesop', 3120, 4160): 28, ('Samwise', 1944, 2592): 24, ('Fievel', 1920, 2560): 24, ('Fievel', 2560, 1920): 19, ('Aesop', 4000, 3000): 18, ('Fievel', 3000, 4000): 17, ('Samwise', 3264, 1836): 16, ('Fievel', 4000, 3000): 15, ('Fievel', 1600, 1200): 13, ('Mycroft', 3840, 2160): 12, ('Steve', 3120, 4160): 11, ('Mycroft', 4608, 3456): 11, ('Chase', 3120, 4160): 9, ('Fievel', 3840, 2160): 7, ('Samwise', 2592, 1944): 6, ('Samwise', 3840, 2160): 6, ('Samwise', 1840, 3264): 5, ('Mycroft', 3456, 4608): 5, ('Samwise', 1024, 1280): 4, ('Aesop', 4160, 3120): 4, ('Fievel', 1200, 1600): 4, ('Fievel', 3120, 4160): 3, ('Steve', 4160, 3120): 2, ('Samwise', 1600, 1195): 2, ('Samwise', 2048, 1529): 1, ('Aesop', 720, 960): 1, ('Chase', 720, 960): 1})\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "#group dimension sets with counts of each\n",
     "dims_group_counts = collections.Counter(dims)\n",
@@ -69,18 +53,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 76,
+   "execution_count": null,
    "id": "6f63a15b-289f-459f-9c69-21c23489e8ba",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "35\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "#how many distinct cominations are there?\n",
     "print(len(dims_group_counts))"
