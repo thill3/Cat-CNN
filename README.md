@@ -5,7 +5,7 @@ I'm embarking on a project to create a Convolutional Neural Network (CN) to labe
 
 The code in this repository is some preliminary analysis to determine the pictures I have and their various sizes.
 
-Some reading suggests that in most cases pictures for CNNs have the same dimensions (height and width) and number of channels (sets of color depths for the basic colors). This is because general practice in CNN architectures follows up the convolutions with fully-connected (dense) neural network processing layers. Because any given network can only have one set of dense layers it is the case that that network can accept only one size of input (any other size would require more or fewer weights, and those would result in different values from training.
+Some reading suggests that in most cases pictures for CNNs have the same dimensions (height and width) and number of channels (sets of color depths for the basic colors). This is because general practice in CNN architectures follows up the convolutions with fully-connected (dense) neural network processing layers. Because any given network can only have one set of dense layers it is the case that any CNN that includes those dense layers near the end of the network can accept only one size of input (any other size would require more or fewer weights, and those would result in different values from training).
 
 This propblem can be dealt with in multiuple ways. I'm still learning, so I may discover more.
   1. The brute force approach is to, if the different sizes of inputs are known beforehand, is to create and train individual networks for each potential set of image dimensions and number of channels.
