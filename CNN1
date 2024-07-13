@@ -21,6 +21,7 @@
    "outputs": [],
    "source": [
     "dims = []\n",
+    "solo_pics_path = '/home/<your_username>/Pictures/Solo Cat Pictures'\n",
     "print(os.listdir(solo_pics_path))"
    ]
   },
@@ -69,6 +70,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
+    "#22 unique image dimension combos\n",
     "#35 unique combinations of cat and image dimensions\n",
     "#training 35 different CNNS might be the most comprehensive way to work this\n",
     "    #it might be "
