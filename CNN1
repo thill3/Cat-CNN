@@ -1,0 +1,123 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 71,
+   "id": "40359fcd-bd7e-4306-9bea-67813b47df46",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import imagesize\n",
+    "import os\n",
+    "import numpy as np\n",
+    "import collections"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "id": "f29434af-bbca-429c-8c33-91b4fc950209",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Steve', 'Samwise', 'Aesop', 'Fievel', 'Mycroft', 'Chase']\n"
+     ]
+    }
+   ],
+   "source": [
+    "dims = []\n",
+    "print(os.listdir(solo_pics_path))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "id": "7fcfe1e7-fd39-45eb-b142-9ef913646d2c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for solo_cat_folder in os.listdir(solo_pics_path):\n",
+    "    pics = os.listdir(solo_pics_path + '/' + solo_cat_folder)\n",
+    "    for pic in pics:\n",
+    "        if pic[-3:] != 'mp4':\n",
+    "            width, height = imagesize.get(solo_pics_path + '/' + solo_cat_folder + '/' + pic)\n",
+    "            dims.append((solo_cat_folder, height, width))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 75,
+   "id": "4c47672f-b9f4-46df-8a47-0899b188ff90",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Counter({('Chase', 3000, 4000): 73, ('Mycroft', 3488, 4640): 68, ('Samwise', 1836, 3264): 65, ('Steve', 3000, 4000): 51, ('Aesop', 3000, 4000): 49, ('Steve', 4000, 3000): 46, ('Mycroft', 4640, 3488): 44, ('Chase', 4000, 3000): 31, ('Aesop', 3120, 4160): 28, ('Samwise', 1944, 2592): 24, ('Fievel', 1920, 2560): 24, ('Fievel', 2560, 1920): 19, ('Aesop', 4000, 3000): 18, ('Fievel', 3000, 4000): 17, ('Samwise', 3264, 1836): 16, ('Fievel', 4000, 3000): 15, ('Fievel', 1600, 1200): 13, ('Mycroft', 3840, 2160): 12, ('Steve', 3120, 4160): 11, ('Mycroft', 4608, 3456): 11, ('Chase', 3120, 4160): 9, ('Fievel', 3840, 2160): 7, ('Samwise', 2592, 1944): 6, ('Samwise', 3840, 2160): 6, ('Samwise', 1840, 3264): 5, ('Mycroft', 3456, 4608): 5, ('Samwise', 1024, 1280): 4, ('Aesop', 4160, 3120): 4, ('Fievel', 1200, 1600): 4, ('Fievel', 3120, 4160): 3, ('Steve', 4160, 3120): 2, ('Samwise', 1600, 1195): 2, ('Samwise', 2048, 1529): 1, ('Aesop', 720, 960): 1, ('Chase', 720, 960): 1})\n"
+     ]
+    }
+   ],
+   "source": [
+    "#group dimension sets with counts of each\n",
+    "dims_group_counts = collections.Counter(dims)\n",
+    "print(dims_group_counts)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "id": "6f63a15b-289f-459f-9c69-21c23489e8ba",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "35\n"
+     ]
+    }
+   ],
+   "source": [
+    "#how many distinct cominations are there?\n",
+    "print(len(dims_group_counts))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e13e3571-5e69-4d8d-affe-8862c0ffa204",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#35 unique combinations of cat and image dimensions\n",
+    "#training 35 different CNNS might be the most comprehensive way to work this\n",
+    "    #it might be "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
